@@ -1,8 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import axios from 'axios'
 
 const Home: NextPage = () => {
+  // use axios to pull data into state
+
+  //in the return, incredimentally pass that info as props into a generic component
+
+
+  //set up pagination so that each page auto creates a sub page displaying that info?
+
+  //
+  
+  
   return (
     <div className={styles.container}>
       <Head>

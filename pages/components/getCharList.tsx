@@ -1,29 +1,21 @@
-import React from "react";
 import axios from "axios";
 import { useState } from "react";
 
-const CharList = () => {
-    //usestate
-    var state = {
-        characterList: []
-    }
-    
+const getCharList = () => {
+
+    const [characterList, setCharacterList] = useState([])
+        
     axios.get('https://rickandmortyapi.com/api/character')
         .then(res => {
             // console.log(res.data.results)
-            const this.characterList = res.data;
-            console.log(state.characterList)
+            setCharacterList(res.data)
+            // const this.characterList = res.data;
+            console.log(characterList)
         })
     
-    
-    // get the response to display a list of characters to the frontend.
-    return <p>{state.characterList}</p>
-    // (
-    //     {state.characterList.map((c) => {
-    //       <p>{state.characterList[c]}</p>
-    //     }
-    // )})
+    return characterList
+
 }
 
-export default CharList;
+export default getCharList;
 // https://www.digitalocean.com/community/tutorials/react-axios-react

@@ -2,30 +2,36 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
-import axios from "axios"; 
+import axios from "axios";
+import DisplayCharacter from './components/DisplayCharacter' 
 
 const Home: NextPage = () => {
   // get request rickandmortyapi and save result in state
   const [characterList, setCharacterList] = useState({})
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character')
+    const result = axios.get('https://rickandmortyapi.com/api/character')
     .then(res => {
       setCharacterList(res.data)
+      setLoading(false)
     })
   }, [])
-  console.log(characterList.results[0]) //displays object with all of character n's stats.
-  
+
+  // console.log(characterList.results)
+
+  // console.log(characterList.results[0]) //displays object with all of character n's stats.
+  // console.log(characterList.results) //displays object with all of character n's stats.
+  // use effect issue
+
   //in the return, incredimentally pass that info as props into a generic component
 
 
   //set up pagination so that each page auto creates a sub page displaying that info?
 
-  //
-  
-  
   return (
     <div className={styles.container}>
+      {console.log(characterList.results)}
       <Head>
         <title>Character Selector</title>
         <meta name="description" content="Rick and morty Characters!" />
@@ -33,6 +39,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        {loading ? <h1>Page Loading </h1>: <p>{characterList.results[0].name}</p>}
+
+        
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -41,7 +50,12 @@ const Home: NextPage = () => {
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
-        {/* <DisplayCharacter /> */}
+        {/* Pass individual character information into display component
+        {characterList.results.map((_,i) => {
+          return <DisplayCharacter 
+                  name={characterList.results[i]}
+                  />
+        })} */}
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

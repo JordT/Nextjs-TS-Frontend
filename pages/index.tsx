@@ -19,9 +19,6 @@ const Home: NextPage = () => {
     })
   }, [])
 
-  //in the return, incredimentally pass that info as props into a generic component
-
-
   //set up pagination so that each page auto creates a sub page displaying that info?
 
   return (
@@ -33,6 +30,7 @@ const Home: NextPage = () => {
       </Head> 
 
       <main className={styles.main}>
+        {/* If API is successful, display characters */}
         {loading ? <Loading /> : <DisplayCharacter character={characterList.results[0]}/>}
         {/* <p>{characterList.results[0].name}</p> */}
         <h1 className={styles.title}>

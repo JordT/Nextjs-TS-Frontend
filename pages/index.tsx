@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
 import axios from "axios";
+import Loading from './components/Loading'
 import DisplayCharacter from './components/DisplayCharacter' 
 
 const Home: NextPage = () => {
@@ -18,12 +19,6 @@ const Home: NextPage = () => {
     })
   }, [])
 
-  // console.log(characterList.results)
-
-  // console.log(characterList.results[0]) //displays object with all of character n's stats.
-  // console.log(characterList.results) //displays object with all of character n's stats.
-  // use effect issue
-
   //in the return, incredimentally pass that info as props into a generic component
 
 
@@ -31,17 +26,15 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      {console.log(characterList.results)}
       <Head>
         <title>Character Selector</title>
         <meta name="description" content="Rick and morty Characters!" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> 
 
       <main className={styles.main}>
-        {loading ? <h1>Page Loading </h1>: <p>{characterList.results[0].name}</p>}
-
-        
+        {loading ? <Loading /> : <DisplayCharacter character={characterList.results[0]}/>}
+        {/* <p>{characterList.results[0].name}</p> */}
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

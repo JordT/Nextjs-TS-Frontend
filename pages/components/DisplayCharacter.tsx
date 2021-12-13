@@ -1,6 +1,5 @@
 const DisplayCharacter = (props) => {
-  
-    return <p>{props.name}</p>
+    return <p>{props.character.name}</p>
 }
 
 export default DisplayCharacter;

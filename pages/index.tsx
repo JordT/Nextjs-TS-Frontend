@@ -1,8 +1,29 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import {useState, useEffect} from 'react'
+import axios from "axios"; 
 
 const Home: NextPage = () => {
+  // get request rickandmortyapi and save result in state
+  const [characterList, setCharacterList] = useState({})
+
+  useEffect(() => {
+    axios.get('https://rickandmortyapi.com/api/character')
+    .then(res => {
+      setCharacterList(res.data)
+    })
+  }, [])
+  console.log(characterList.results[0]) //displays object with all of character n's stats.
+  
+  //in the return, incredimentally pass that info as props into a generic component
+
+
+  //set up pagination so that each page auto creates a sub page displaying that info?
+
+  //
+  
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -15,11 +36,12 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        {/* <DisplayCharacter /> */}
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

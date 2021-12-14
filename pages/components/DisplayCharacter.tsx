@@ -1,4 +1,5 @@
 const DisplayCharacter = (props) => {
+    console.log(props.character)
     return (
     <div>
         <p>Character: {props.character.name}</p>

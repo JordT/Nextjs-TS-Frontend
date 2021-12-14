@@ -19,6 +19,15 @@ const Home: NextPage = () => {
     })
   }, [])
 
+// Display character info - array is clunky
+  const displayChar = () => {
+    let displayArray: Array<Object>  = []
+    characterList.results.map((i: Object) => {
+      displayArray.push(<DisplayCharacter character={i} />)
+    })
+    return displayArray
+  }
+
   //set up pagination so that each page auto creates a sub page displaying that info?
 
   return (
@@ -31,8 +40,9 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         {/* If API is successful, display characters */}
-        {loading ? <Loading /> : <DisplayCharacter character={characterList.results[0]}/>}
-        {/* <p>{characterList.results[0].name}</p> */}
+        {loading ? <Loading /> : <DisplayCharacter character={characterList.results[1]}/>}
+
+        
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -40,14 +50,9 @@ const Home: NextPage = () => {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
-
-        {/* Pass individual character information into display component
-        {characterList.results.map((_,i) => {
-          return <DisplayCharacter 
-                  name={characterList.results[i]}
-                  />
-        })} */}
-
+        {loading ? <Loading/> : displayChar()}
+        {/* {displayChar()} */}
+ 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Character 1  &rarr;</h2>

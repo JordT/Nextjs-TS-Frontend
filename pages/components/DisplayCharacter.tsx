@@ -1,6 +1,6 @@
 import styles from '../../styles/Home.module.css'
 
-const DisplayCharacter = (props) => {
+const DisplayCharacter = (props: any) => {
     return (
     <div className={styles.grid}>
         <div className={styles.card}>

@@ -5,20 +5,22 @@ import {useState, useEffect} from 'react'
 import axios from "axios";
 import Loading from './components/Loading'
 import DisplayCharacter from './components/DisplayCharacter' 
+import ReactPaginate from 'react-paginate'
 
 const Home: NextPage = () => {
 
   const [characterList, setCharacterList] = useState({})
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
 
 // Get character info from api
   useEffect(() => {
-    const result = axios.get('https://rickandmortyapi.com/api/character')
+    axios.get(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
     .then(res => {
       setCharacterList(res.data)
       setLoading(false)
     })
-  }, [])
+  }, [currentPage])
 
 // Display character info - array is clunky
   const displayChar = () => {
@@ -28,6 +30,12 @@ const Home: NextPage = () => {
     })
     return displayArray
   }
+
+  //Handle Page click
+  const handlePageClick = (event) => {
+    console.log(event.selected + 1)
+    setCurrentPage(event.selected + 1)
+   }
 
   //set up pagination so that each page auto creates a sub page displaying that info?
 
@@ -50,6 +58,27 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Select a character to learn more!
         </p>
+        {/* pagination component */}
+        <ReactPaginate 
+          onPageChange={(event) => handlePageClick(event)}
+          // onClick={(event) => handlePageClick(event)} // wrong
+          pageRangeDisplayed={0}
+          marginPagesDisplayed={0}
+          previousLabel="<< Previous"
+          nextLabel="Next >>"
+          breakLabel="..."
+          pageCount={42} //could be dynamic
+          containerClassName="pagination justify-content-center"
+          // start of classes
+          pageClassName="page-item" 
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          activeClassName="active"
+        />
+
         <div className={styles.displayContainer}>
           {/* display characters once they've been retrieved */}
           {loading ? <Loading/> : displayChar()}

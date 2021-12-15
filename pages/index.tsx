@@ -33,7 +33,6 @@ const Home: NextPage = () => {
 
   //Handle Page click
   const handlePageClick = (event) => {
-    console.log(event.selected + 1)
     setCurrentPage(event.selected + 1)
    }
 
@@ -52,39 +51,21 @@ const Home: NextPage = () => {
         {/* {loading ? <Loading /> : <DisplayCharacter character={characterList.results[1]}/>} */}
 
         
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <p className={styles.description}>
-          Select a character to learn more!
-        </p>
-        {/* pagination component */}
+        <h1 className={styles.title}>Rick and Morty Characters!</h1>
+        <p className={styles.description}>Select a character to learn more!</p>
+
         <ReactPaginate 
           onPageChange={(event) => handlePageClick(event)}
-          // onClick={(event) => handlePageClick(event)} // wrong
           pageRangeDisplayed={0}
           marginPagesDisplayed={0}
           previousLabel="<< Previous"
           nextLabel="Next >>"
           pageCount={42} //could be dynamic
           containerClassName={styles.pagination}
-          
-          // attemot 2
-           /* as this work same as bootstrap class */
-          // subContainerClassName={'pages pagination'} /* as this work same as bootstrap class */
-          // activeClassName={'active'} /* as this work same as bootstrap class */         
-          // start of classes
-          // pageClassName="page-item" 
-          // pageLinkClassName="page-link"
-          // previousClassName="page-item"
-          // previousLinkClassName="page-link"
-          // nextClassName="page-item"
-          // nextLinkClassName="page-link"
-          // activeClassName="active"
         />
 
+        {/* Display character cards */}
         <div className={styles.displayContainer}>
-          {/* display characters once they've been retrieved */}
           {loading ? <Loading/> : displayChar()}
         </div>
  

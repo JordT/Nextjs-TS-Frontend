@@ -66,17 +66,21 @@ const Home: NextPage = () => {
           marginPagesDisplayed={0}
           previousLabel="<< Previous"
           nextLabel="Next >>"
-          breakLabel="..."
           pageCount={42} //could be dynamic
-          containerClassName="pagination justify-content-center"
+          containerClassName={styles.pagination}
+          
+          // attemot 2
+           /* as this work same as bootstrap class */
+          // subContainerClassName={'pages pagination'} /* as this work same as bootstrap class */
+          // activeClassName={'active'} /* as this work same as bootstrap class */         
           // start of classes
-          pageClassName="page-item" 
-          pageLinkClassName="page-link"
-          previousClassName="page-item"
-          previousLinkClassName="page-link"
-          nextClassName="page-item"
-          nextLinkClassName="page-link"
-          activeClassName="active"
+          // pageClassName="page-item" 
+          // pageLinkClassName="page-link"
+          // previousClassName="page-item"
+          // previousLinkClassName="page-link"
+          // nextClassName="page-item"
+          // nextLinkClassName="page-link"
+          // activeClassName="active"
         />
 
         <div className={styles.displayContainer}>

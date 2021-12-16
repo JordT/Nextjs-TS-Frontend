@@ -4,8 +4,10 @@ import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
 import axios from "axios";
 import Loading from './components/Loading'
+import Link from 'next/link'
 import DisplayCharacter from './components/DisplayCharacter' 
 import ReactPaginate from 'react-paginate'
+
 
 const Home: NextPage = () => {
 
@@ -53,7 +55,10 @@ const Home: NextPage = () => {
         
         <h1 className={styles.title}>Rick and Morty Characters!</h1>
         <p className={styles.description}>Select a character to learn more!</p>
-
+        <Link href="character/CharacterPage">
+          <a>Test Link</a>
+        </Link>
+        
         <ReactPaginate 
           onPageChange={(event) => handlePageClick(event)}
           pageRangeDisplayed={0}

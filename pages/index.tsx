@@ -55,10 +55,10 @@ const Home: NextPage = () => {
         
         <h1 className={styles.title}>Rick and Morty Characters!</h1>
         <p className={styles.description}>Select a character to learn more!</p>
-        <Link href="character/CharacterPage">
+        <Link href="/characterPage/RickSan">
           <a>Test Link</a>
         </Link>
-        
+
         <ReactPaginate 
           onPageChange={(event) => handlePageClick(event)}
           pageRangeDisplayed={0}

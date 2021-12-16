@@ -2,9 +2,11 @@ import { useRouter } from "next/router";
 
 const CharacterPage = () => {
   const router = useRouter()
-  // const { pid } = router.query
+  const { pid } = router.query
 
-  return <p>This is a character page for: </p>
+  return (
+    <p>This is a character page for: {pid} </p>
+  )
 }
 
 export default CharacterPage

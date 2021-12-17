@@ -18,8 +18,6 @@ const CharacterPage = () => {
     })
   }, [])
   
-  console.log(characterInfo.image)
-  // https://rickandmortyapi.com/api/character/avatar/3.jpeg
   return (
     <div>
       <a href="http://localhost:3000">Home</a>

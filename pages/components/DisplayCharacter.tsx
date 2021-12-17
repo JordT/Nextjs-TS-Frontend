@@ -1,20 +1,17 @@
 import styles from '../../styles/Home.module.css'
-// import Link from 'next/Link'
+import Link from 'next/link'
 
 const DisplayCharacter = (props: any) => {
+    const charPageURL = `/characterPage/${props.character.id}`
+    
     return (
     <div className={styles.grid}>
-        <div className={styles.card}>
-            <h2>{props.character.name}</h2>
-            <p>Status: {props.character.status}</p>
-            <p>Species: {props.character.species}</p>
-            <p>Gender: {props.character.gender}</p>
-            {/* <Link href="/character/CharacterPage" /> */}
-            {/* <p>{props.character.origin}</p> */}
-            {/* <p>{props.character.lastknownorigin}</p> */}
-            {/* <p>{props.character.numb of episodes}</p> */}
-            {/* image */}
-        </div>
+        <Link href={charPageURL}>
+            <div className={styles.card}>
+                <h2>{props.character.name}</h2>
+                <p>Image goes here...</p>
+            </div>
+        </Link>
     </div>
     )
 }

@@ -22,20 +22,15 @@ const CharacterPage = () => {
   // https://rickandmortyapi.com/api/character/avatar/3.jpeg
   return (
     <div>
-      <p>This is a character page for character number: {router.query.CharacterPage}</p>
-      <p>{characterInfo.name}</p>
-      <p>{characterInfo.status}</p>
-      <p>{characterInfo.species}</p>
-      <p>{characterInfo.Gender}</p>
-      {/* <p>{characterInfo.origin.name}</p> */}
-      <p>Number of episodes:</p>
-      { loading ? <p>Loading</p> : <Image src={characterInfo.image} height='300' width='300' />}
-      
-      {/* <Image src={characterInfo.image}/>
-      Last Known Location
-      Image
-      Number of episodes appearances */}
-      
+      <p>Include naviation for next page or previous page??</p>
+      <p>Name: {characterInfo.name}</p>
+      <p>Status: {characterInfo.status}</p>
+      <p>Species: {characterInfo.species}</p>
+      <p>Gender: {characterInfo.gender}</p>
+      { loading ? <p></p> : <p>Origin: {characterInfo.origin.name}</p>}
+      { loading ? <p></p> : <p>Last know location: {characterInfo.location.name}</p>}
+      { loading ? <p></p> : <p>Number of appearances: {characterInfo.episode.length}</p>}
+      { loading ? <p></p> : <Image src={characterInfo.image} height='300' width='300' />}
     </div>
   )
 }

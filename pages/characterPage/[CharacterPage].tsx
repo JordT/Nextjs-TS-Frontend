@@ -22,7 +22,7 @@ const CharacterPage = () => {
   // https://rickandmortyapi.com/api/character/avatar/3.jpeg
   return (
     <div>
-      <p>Include naviation for next page or previous page??</p>
+      <a href="http://localhost:3000">Home</a>
       <p>Name: {characterInfo.name}</p>
       <p>Status: {characterInfo.status}</p>
       <p>Species: {characterInfo.species}</p>

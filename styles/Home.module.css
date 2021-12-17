@@ -143,6 +143,10 @@
 }
 /* pagination */
 
+.smallImage {
+  border-radius: 10px;
+  align-content: center;
+}
 
 @media (max-width: 600px) {
   .grid {

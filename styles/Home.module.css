@@ -148,6 +148,17 @@
   align-content: center;
 }
 
+.largeImage {
+  border-radius: 10px;
+}
+
+.anchor {
+  text-align: left;
+}
+.anchor:hover {
+  color:#0070f3
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

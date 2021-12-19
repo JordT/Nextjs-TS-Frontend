@@ -3,8 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
 import axios from "axios";
-import Loading from './components/Loading'
-import Link from 'next/link'
+// import Loading from './components/Loading'
 import DisplayCharacter from './components/DisplayCharacter' 
 import ReactPaginate from 'react-paginate'
 
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
     })
   }, [currentPage])
 
-// Display character info - array is clunky
+// Display character info - array is clunky?
   const displayChar = () => {
     let displayArray: Array<Object>  = []
     characterList.results.map((i: Object) => {
@@ -38,8 +37,6 @@ const Home: NextPage = () => {
     setCurrentPage(event.selected + 1)
    }
 
-  //set up pagination so that each page auto creates a sub page displaying that info?
-
   return (
     <div className={styles.container}>
       <Head>
@@ -49,16 +46,9 @@ const Home: NextPage = () => {
       </Head> 
 
       <main className={styles.main}>
-        {/* If API is successful, display characters */}
-        {/* {loading ? <Loading /> : <DisplayCharacter character={characterList.results[1]}/>} */}
-
-        
         <h1 className={styles.title}>Rick and Morty Characters!</h1>
         <p className={styles.description}>Select a character to learn more!</p>
-        <Link href="/characterPage/RickSan">
-          <a>Test Link</a>
-        </Link>
-
+        
         <ReactPaginate 
           onPageChange={(event) => handlePageClick(event)}
           pageRangeDisplayed={0}
@@ -71,16 +61,9 @@ const Home: NextPage = () => {
 
         {/* Display character cards */}
         <div className={styles.displayContainer}>
-          {loading ? <Loading/> : displayChar()}
+          {/* {loading ? <Loading/> : displayChar()} */}
+          {loading ? <p></p> : displayChar()}
         </div>
- 
-        {/* <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Character 1  &rarr;</h2>
-            <p>Name and Stats</p>
-          </a>
-
-        {/* </div> */}
       </main>
 
       <footer className={styles.footer}>

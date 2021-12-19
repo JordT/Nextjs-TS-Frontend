@@ -154,14 +154,24 @@
 
 .anchor {
   text-align: left;
+  color: #0070f3;
 }
 .anchor:hover {
-  color:#0070f3
+  color: red;
 }
 
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  
+  .displayContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
   }
 }

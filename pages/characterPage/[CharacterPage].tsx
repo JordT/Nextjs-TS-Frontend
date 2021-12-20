@@ -10,8 +10,8 @@ const CharacterPage = () => {
   const characterToRetrieve = router.query.CharacterPage
   const homeURL = "http://localhost:3000"
 
-  const [characterInfo, setCharacterInfo] = useState({})
-  const [loading, setLoading] = useState(true)
+  const [characterInfo, setCharacterInfo] = useState<any>({})
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/character/${characterToRetrieve}`)

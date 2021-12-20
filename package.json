@@ -3,10 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "test": "npx cypress run --spec 'cypress/integration/frontend.spec.js'",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "test": "npx cypress run --spec 'cypress/integration/frontend.spec.js'"
   },
   "dependencies": {
     "next": "12.0.7",

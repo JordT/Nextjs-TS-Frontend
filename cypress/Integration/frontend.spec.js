@@ -12,7 +12,7 @@ describe('Check frontend on port 3000', () => {
     })
 
     it('has an H1 title', () => {
-      cy.get('[data-cy=h1-title]').contains("Rick and Morty Characters!")
+      cy.get('[data-cy=h3-title]').contains("Rick and Morty Characters!")
     })
 });
 

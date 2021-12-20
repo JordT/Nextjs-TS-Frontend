@@ -13,4 +13,4 @@ The app runs locally on localhost:3000, to run it:
 
 4. run `yarn install` to install dependencies
 5. `yarn dev` will start the app, which can be viewed at http://localhost:3000
-6. To run the tests, open another terminal in the nexths-ts-frontend folder and run `yarn test`
+6. To run the tests, open another terminal in the same nextjs-ts-frontend folder and run `yarn test`

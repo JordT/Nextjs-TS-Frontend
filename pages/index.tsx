@@ -3,11 +3,10 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
 import axios from "axios";
-// import Loading from './components/Loading'
 import DisplayCharacter from './components/DisplayCharacter' 
 import ReactPaginate from 'react-paginate'
 
-
+// add cypress and call it 
 const Home: NextPage = () => {
 
   const [characterList, setCharacterList] = useState({})
@@ -45,11 +44,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head> 
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Rick and Morty Characters!</h1>
+      <main className={styles.main}  data-cy="main" >
+        <h1 className={styles.title} data-cy="h1-title">Rick and Morty Characters!</h1>
         <p className={styles.description}>Select a character to learn more!</p>
         
-        <ReactPaginate 
+        <ReactPaginate
           onPageChange={(event) => handlePageClick(event)}
           pageRangeDisplayed={0}
           marginPagesDisplayed={0}
@@ -61,7 +60,6 @@ const Home: NextPage = () => {
 
         {/* Display character cards */}
         <div className={styles.displayContainer}>
-          {/* {loading ? <Loading/> : displayChar()} */}
           {loading ? <p></p> : displayChar()}
         </div>
       </main>

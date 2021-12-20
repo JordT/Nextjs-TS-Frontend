@@ -7,7 +7,7 @@ const DisplayCharacter = (props: any) => {
     const imageURL = props.character.image
 
     return (
-    <div className={styles.grid}>
+    <div className={styles.grid} data-cy={`card-${props.character.id}`}>
         <Link href={charPageURL}>
             <div className={styles.card}>
                 <h2>{props.character.name}</h2>

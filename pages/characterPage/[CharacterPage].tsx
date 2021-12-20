@@ -30,12 +30,11 @@ const CharacterPage = () => {
       </Head> 
 
       <main className={styles.main} >
-        <a href={homeURL} className={styles.anchor}><u>&lt;Home</u></a>
+        <a href={homeURL} className={styles.anchor} data-cy="home"><u>&lt; Home</u></a>
         
-        <h1>Character Page</h1>
+        <h1 data-cy="characterpage-h1">{characterInfo.name}</h1>
         <div className={styles.displayContainer}>
-          <div>
-            <p><b>Name:</b> {characterInfo.name}</p>
+          <div data-cy="char-stats">
             <p><b>Status:</b> {characterInfo.status}</p>
             <p><b>Species:</b> {characterInfo.species}</p>
             <p><b>Gender:</b> {characterInfo.gender}</p>
@@ -44,7 +43,7 @@ const CharacterPage = () => {
             { loading ? <p></p> : <p><b>Number of appearances:</b> {characterInfo.episode.length}</p>}
           </div>
           <div>
-            { loading ? <p></p> : <Image src={characterInfo.image} height='300' width='300' className={styles.largeImage}/>}
+            { loading ? <p></p> : <Image src={characterInfo.image} height='300' width='300' className={styles.largeImage} data-cy="char-image"/>}
           </div>
         </div>
       </main>

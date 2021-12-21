@@ -9,6 +9,7 @@ The app runs locally on localhost:3000, to run it:
 3. If you don't have yarn - install yarn using
    `npm install --global yarn`
 
+    You might need to run this as an administrator (include `sudo` on MacOS)
     You'll need node package manager https://www.npmjs.com
 
 4. run `yarn install` to install dependencies

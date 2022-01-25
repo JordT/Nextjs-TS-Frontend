@@ -51,7 +51,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 1rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -77,7 +77,7 @@
   margin: 1rem;
   padding: 1.5rem;
   text-align: center;
-  color: inherit;
+  background-color: rgb(177, 130, 68); 
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
@@ -89,8 +89,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: black;
+  border-color: black;
 }
 
 .card h2 {
@@ -116,6 +116,7 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 1000px;
+  gap: 5vw;
 }
 
 /* pagination formating */
@@ -136,7 +137,7 @@
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #2c689c;
+  color: rgb(97, 68, 30);
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
